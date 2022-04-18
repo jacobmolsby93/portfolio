@@ -9,17 +9,15 @@ for (let i = 0; i < project_image.length; i++) {
     project_image[i].addEventListener('click', function(e) {
         if (e.target.attributes.src.nodeValue.length > 50) {
             let target = e.target.attributes.src.nodeValue.slice(53,)
-            let active = project_image[i]
-            clickHandler(target, active);
+            clickHandler(target);
         } else {
             let target = e.target.attributes.src.nodeValue.slice(7,)
-            let active = project_image[i]
-            clickHandler(target, active);
+            clickHandler(target);
         }
     })
 }
 
-const clickHandler = (target, active) => {
+const clickHandler = (target) => {
     projects.map((e, item) => {
         if (item.id == target) {
             // displays an element with the same image id
