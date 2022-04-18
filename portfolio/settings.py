@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'msby-site.herokuapp.com',
+    'msby.herokuapp.com',
     'localhost'
 ]
 
