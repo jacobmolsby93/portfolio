@@ -4,14 +4,13 @@ var project_image = $('.p-img')
 var projects = $('.project-id-wrapper')
 var selected = $('.selected-project-logo')
 
-
-
 // iterate through projects on click
 for (let i = 0; i < project_image.length; i++) {
     project_image[i].addEventListener('click', function(e) {
         if (e.target.attributes.src.nodeValue.length > 50) {
             let target = e.target.attributes.src.nodeValue.slice(53,)
-            clickHandler(target);
+            let active = project_image[i]
+            clickHandler(target, active);
         } else {
             let target = e.target.attributes.src.nodeValue.slice(7,)
             let active = project_image[i]
