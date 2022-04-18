@@ -10,7 +10,6 @@
 var pJS = function(tag_id, params){
 
   var canvas_el = document.querySelector('#'+tag_id+' > .particles-js-canvas-el');
-  var main_container = document.querySelector('.main-container')
 
   /* particles.js variables with default values */
   this.pJS = {
@@ -1521,23 +1520,7 @@ window.particlesJS = function(tag_id, params){
 
 };
 
-window.particlesJS.load = function(tag_id, path_config_json, callback){
-
-  /* load json config */
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', path_config_json);
-  xhr.onreadystatechange = function (data) {
-    if(xhr.readyState == 4){
-      if(xhr.status == 200){
-        var params = JSON.parse(data.currentTarget.response);
-        window.particlesJS(tag_id, params);
-        if(callback) callback();
-      }else{
-        console.log('Error pJS - XMLHttpRequest status: '+xhr.status);
-        console.log('Error pJS - File config not found');
-      }
-    }
-  };
-  xhr.send();
-
+window.particlesJS.load = function(tag_id, callback){
+  window.particlesJS(tag_id, params);
+  if(callback) callback();
 };
