@@ -35,7 +35,11 @@ ALLOWED_HOSTS = [
     'https://8000-jacobmolsby93-*'
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-jacobmolsby93-portfolio-w5xiuh1ettq.ws-eu40.gitpod.io']
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-jacobmolsby93-portfolio-w5xiuh1ettq.ws-eu40.gitpod.io',
+    'https://msby.site/',
+    'https://www.msby.site/'
+]
 # Application definition
 
 INSTALLED_APPS = [
