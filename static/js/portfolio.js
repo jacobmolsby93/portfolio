@@ -32,14 +32,14 @@ for (let i = 0; i < project_image.length; i++) {
         }
     })
 }
+setTimeout(() => {
+    document.addEventListener('DOMContentLoaded', displayHide())
+}, 300)
 
-document.addEventListener('DOMContentLoaded', displayHide())
-const displayHide = () => {
+function displayHide() {
     for (let i = 0; i < projects.length; i++) {
         // Hide all projects
-        setTimeout(() => {
-            projects[i].style.display = "none"
-        }, 300)
+        projects[i].style.display = "none"
         // Display the first project on page load
         projects[0].style.display = "block"
     }
