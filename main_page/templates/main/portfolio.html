@@ -21,7 +21,7 @@
             <!-- Project Information -->
             <div class="inner-portfolio-container w-75 mt-3 mt-md-5 p-3 position-relative">
                 {% for project in projects %}
-                <div class="project-id-wrapper" id="{{ project.project_image }}">
+                <div class="project-id-wrapper hidden" id="{{ project.project_image }}">
                     <div class="project-logo-wrapper text-end">
                         <!-- Selected Project Image -->
                         {% if project.project_image %}
@@ -56,10 +56,10 @@
             </div>
 
             <!-- Different project icons -->
-            <div class="select-project-wrapper pt-2 pt-md-5">
-                <ul class="list-inline w-100 d-flex justify-content-between">
+            <div class="select-project-wrapper pt-3 pt-md-4">
+                <ul class="list-inline w-100 d-flex justify-content-between align-items-center">
                     {% for project_image in projects %}
-                    <li class="list-inline-item" id="project-image-{{ project_image.id }}">
+                    <li class="list-inline-item p-img {% if forloop.counter0 == 0%}active{% endif %}" id="project-image-{{ project_image.id }}">
                         {% if project_image.project_image %}
                         <img class="select-project-logo" src="{{ project_image.project_image.url }}" alt="Project Logo">
                         {% endif %}
