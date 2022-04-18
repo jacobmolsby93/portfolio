@@ -6,6 +6,7 @@ var projects = $('.project-id-wrapper')
 for (let i = 0; i < project_image.length; i++) {
     project_image[i].addEventListener('click', function(e) {
         const target = e.target.attributes.src.nodeValue
+        console.log(target)
         projects.map((e, item) => {
             if (item.id == target) {
                 // displays an element with the same image id 
