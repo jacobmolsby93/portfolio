@@ -28,11 +28,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
+    'www.msby.site',
+    'msby.site',
     'msby.herokuapp.com',
     'localhost',
     'https://8000-jacobmolsby93-*'
-    'https://www.msby.site',
-    'https://msby.site'
 ]
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-jacobmolsby93-portfolio-w5xiuh1ettq.ws-eu40.gitpod.io']
