@@ -1521,6 +1521,6 @@ window.particlesJS = function(tag_id, params){
 };
 
 window.particlesJS.load = function(tag_id, callback){
-  window.particlesJS(tag_id, params);
+  window.particlesJS(tag_id);
   if(callback) callback();
 };
