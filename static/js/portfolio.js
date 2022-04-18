@@ -5,7 +5,7 @@ var projects = $('.project-id-wrapper')
 // iterate through projects on click
 for (let i = 0; i < project_image.length; i++) {
     project_image[i].addEventListener('click', function(e) {
-        const target = e.target.attributes.src.nodeValue
+        const target = e.target.currentSrc
         console.log(target)
         projects.map((e, item) => {
             if (item.id == target) {
