@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- About me img -->
+<div class="about-img"><img src="{{ MEDIA_URL }}jacobmolsby-profile.png" alt="A picture of jacob"></div>
+<!-- Text content -->
+<div class="page-title text-center">
+    <h1>About <spanm class="yellow">Me</span></h1>
+    <h6>Get to know me</h6>
+</div>
+
+<div class="container">
+    <!-- About me text-->
+    <div class="row d-flex justify-content-center justify-content-lg-start">
+        <div class="col-11 col-lg-7 d-flex justify-content-center offset-md-1 pt-3 pt-md-0">
+            <div class="text-wrapper mt-3 mt-md-0">
+                <h3 class="about-title">I’m a front-end <span class="yellow">developer</span> based in <br> <span class="yellow">Stockholm,</span> Sweden.</h3>
+                <div class="offset-wrapper ms-1 ms-lg-4">
+                    <p class="about-me-text mt-3 mt-lg-5">developing web-applications for clients from all 
+                        over the world. Constantly learning and improving my knowledge to always stay up to date. Love working and helping people create their online pressence.
+                        <br>
+                        <br>
+                        Hit me up if you have an exiting project to share!</p>
+                    <div class="row email-wrapper mt-3 mt-lg-5 d-flex justify-content-between align-items-center">
+                        <div class="col-12 col-md-6">
+                            <a class="d-flex align-items-center contact-links" href="mailto:mail@msby.site">
+                                <div class="email-circle-border-about d-flex align-items-center justify-content-center order-last order-md-first ms-2 ms-md-0">
+                                    <img class="email-me-about" src="{{ MEDIA_URL }}email.png" alt="Email icon">
+                                </div>
+                                <h6 class="white ms-md-2">Write Me</h6>
+                             </a>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <!-- Add Resume download -->
+                            <a class="d-flex align-items-center contact-links" href="">
+                                <h6 class="white me-2">Download Resume</h6>
+                                <div class="email-circle-border-about d-flex align-items-center justify-content-center">
+                                    <img class="download-icon" src="{{ MEDIA_URL }}download-icon.png" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-wrapper px-3">
+        <nav>
+            <ul class="list-inline d-flex justify-content-center mb-0 d-block d-lg-none">
+                <li class="list-inline-item pb-3">
+                    <a class="social-link-footer" href="https://github.com/jacobmolsby93" target="_blank">
+                        <img class="social-links-image-footer" src="{{ MEDIA_URL }}github.png" alt="github icon">
+                    </a>
+                </li>
+                <li class="list-inline-item pb-3">
+                    <a class="social-link-footer" href="https://www.fiverr.com/jacobmolsby276" target="_blank">
+                        <img class="social-links-image-footer" src="{{ MEDIA_URL }}fiverr.png" alt="Fiverr icon">
+                    </a>
+                </li>
+                <li class="list-inline-item pb-3">
+                    <a class="social-link-footer" href="https://www.linkedin.com/in/jacob-molsby-688093194/" target="_blank">
+                        <img class="social-links-image-footer" src="{{ MEDIA_URL }}linkedin.png" alt="Linkedin icon">
+                    </a>
+                </li>
+                <li class="list-inline-item pb-3">
+                    <a class="social-link-footer" href="https://www.facebook.com/molsby/" target="_blank">
+                        <img class="social-links-image-footer" src="{{ MEDIA_URL }}facebook.png" alt="Facebook icon">
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link-footer" href="https://www.instagram.com/msbydev/" target="_blank">
+                        <img class="social-links-image-footer" src="{{ MEDIA_URL }}instagram.png" alt="Instagram icon">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="copy-wrapper text-center">
+            <p><img class="copytight-img-footer" src="{{ MEDIA_URL }}copyright.png" alt="copyright icon"> Designed and developed by Jacob Molsby</p>
+        </div>
+    </div>
+</footer>
+{% endblock %}
+

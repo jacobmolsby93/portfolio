@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="particles-js"></div>
+<!-- Page Title -->
+<div class="page-title text-center">
+    <h1>My <spanm class="yellow">Portfolio</span></h1>
+    <h6>Some of my work</h6>
+</div>
+
+<div class="container">
+    <div class="row d-flex justify-content-center pt-2 pt-md-5">
+        <div class="col-12 col-md-8 col-lg-7 portfolio-background d-flex align-items-center index-top">
+            <div id="breaker"></div>
+            <!-- Project Information -->
+            <div class="inner-portfolio-container w-75 mt-3 mt-md-5 p-3 position-relative">
+                {% for project in projects %}
+                <div class="project-id-wrapper" id="{{ project.project_image }}">
+                    <div class="project-logo-wrapper text-end">
+                        <!-- Selected Project Image -->
+                        {% if project.project_image %}
+                        <img class="selected-project-logo" src="{{ project.project_image.url }}" alt="">
+                        {% endif %}
+                    </div>
+                    <h4>{{ project.project_name }}</h4>
+                    <div class="project-description offset-sm-1 mt-3 mt-md-4">
+                        <!-- Project descripting -->
+                        <p>{{ project.project_description }}</p>
+                        <!-- Project Information -->
+                        <div class="project-info-wrapper mt-3">
+                            <h6>Languages Used:</h6>
+                            <p>{{ project.languages_used }}</p>
+                            <br>
+                            <h6>Frameworks Used:</h6>
+                            <p>{{ project.frameworks_used }}</p>
+                        </div>
+                    </div>
+                    <div class="project-links d-flex justify-content-end pt-2 pt-md-5">
+                        <!-- Deployed link -->
+                        <a href="{{ project.project_deployed_url }}" class="project-links-icon mx-3" data-bs-toggle="tooltip" data-bs-placement="left" title="View deployed project">
+                            <img class="project-links-icon mx-2" src="{{ MEDIA_URL }}browser.png" alt="browser icon">
+                        </a>
+                        <!-- Git Link -->
+                        <a href="{{ project.project_github_url }}" class="project-links-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="View Github page">
+                            <img class="project-links-icon" src="{{ MEDIA_URL }}github.png" alt="github icon">
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Different project icons -->
+            <div class="select-project-wrapper pt-2 pt-md-5">
+                <ul class="list-inline w-100 d-flex justify-content-between">
+                    {% for project_image in projects %}
+                    <li class="list-inline-item" id="project-image-{{ project_image.id }}">
+                        {% if project_image.project_image %}
+                        <img class="select-project-logo" src="{{ project_image.project_image.url }}" alt="Project Logo">
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-wrapper">
+        <div class="d-flex justify-content-end px-3 align-items-end">
+            <div class="next-page order-last index-top text-end">
+                <a class="see-my-work" href="{% url 'about' %}">
+                    <h4 class="white">Get to know me</h4>
+                    <img class="underline-arrow-portfolio" src="{{ MEDIA_URL }}arrow-long.png" alt="Yellow arrow">
+                </a>
+            </div>
+        </div>
+        <p class="text-center text-md-start"><img class="copytight-img-footer" src="{{ MEDIA_URL }}copyright.png"
+                alt="copyright icon"> Designed and developed by Jacob Molsby</p>
+    </div>
+</footer>
+
+
+<script src="{% static 'js/portfolio.js' %}"></script>
+{% endblock %}
