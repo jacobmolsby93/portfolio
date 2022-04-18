@@ -29,9 +29,13 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     'msby.herokuapp.com',
-    'localhost'
+    'localhost',
+    'https://8000-jacobmolsby93-*'
+    'www.msby.site',
+    'msby.site'
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-jacobmolsby93-portfolio-w5xiuh1ettq.ws-eu40.gitpod.io']
 # Application definition
 
 INSTALLED_APPS = [

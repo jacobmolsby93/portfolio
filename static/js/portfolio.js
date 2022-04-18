@@ -5,18 +5,31 @@ var projects = $('.project-id-wrapper')
 // iterate through projects on click
 for (let i = 0; i < project_image.length; i++) {
     project_image[i].addEventListener('click', function(e) {
-        const target = e.target.attributes.src.nodeValue.slice(53,)
-        console.log(target)
-        projects.map((e, item) => {
-            if (item.id == target) {
-                // displays an element with the same image id 
-                item.style.display = "block"
-            }
-            if (item.id != target) {
-                // Else hide all other elements
-                item.style.display = "none"
-            }
-        });
+        if (e.target.attributes.src.nodeValue.length > 50) {
+            const target = e.target.attributes.src.nodeValue.slice(53,)
+            projects.map((e, item) => {
+                if (item.id == target) {
+                    // displays an element with the same image id 
+                    item.style.display = "block"
+                }
+                if (item.id != target) {
+                    // Else hide all other elements
+                    item.style.display = "none"
+                }
+            });
+        } else {
+            const target = e.target.attributes.src.nodeValue.slice(7,)
+            projects.map((e, item) => {
+                if (item.id == target) {
+                    // displays an element with the same image id 
+                    item.style.display = "block"
+                }
+                if (item.id != target) {
+                    // Else hide all other elements
+                    item.style.display = "none"
+                }
+            });
+        }
     })
 }
 
