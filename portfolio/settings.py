@@ -31,8 +31,8 @@ ALLOWED_HOSTS = [
     'msby.herokuapp.com',
     'localhost',
     'https://8000-jacobmolsby93-*'
-    'www.msby.site',
-    'msby.site'
+    'https://www.msby.site',
+    'https://msby.site'
 ]
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-jacobmolsby93-portfolio-w5xiuh1ettq.ws-eu40.gitpod.io']
