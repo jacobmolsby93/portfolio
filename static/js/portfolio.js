@@ -33,12 +33,18 @@ for (let i = 0; i < project_image.length; i++) {
     })
 }
 
-for (let i = 0; i < projects.length; i++) {
-    // Hide all projects
-    projects[i].style.display = "none"
-    // Display the first project on page load
-    projects[0].style.display = "block"
+document.addEventListener('DOMContentLoaded', displayHide())
+const displayHide = () => {
+    for (let i = 0; i < projects.length; i++) {
+        // Hide all projects
+        setTimeout(() => {
+            projects[i].style.display = "none"
+        }, 300)
+        // Display the first project on page load
+        projects[0].style.display = "block"
+    }
 }
+
 
 // Deploy tooltips
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
