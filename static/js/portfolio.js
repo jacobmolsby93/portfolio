@@ -36,14 +36,10 @@ const clickHandler = (target) => {
 
 function addActive(current) {
     project_image.map((e, i) => {
+        console.log(current.id)
+        console.log(i.children[0].attributes[1].nodeValue)
         if (i.children[0].attributes[1].nodeValue.slice(0, 6) == "https") {
             console.log(current.id)
-            if (i.children[0].attributes[1].nodeValue.slice(53,) == current.id) {
-                console.log(i)
-                i.classList.add('active')
-            } else {
-                i.classList.remove('active')
-            }
         } else {
             if (i.children[0].attributes[1].nodeValue.slice(7,) == current.id) {
                 i.classList.add('active')
