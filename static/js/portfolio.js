@@ -1,5 +1,5 @@
 // Get project html elements
-var project_image = $('.list-inline-item')
+var project_image = document.querySelectorAll('.project_image')
 var projects = $('.project-id-wrapper')
 
 // iterate through projects on click
@@ -9,8 +9,9 @@ for (let i = 0; i < project_image.length; i++) {
             const target = e.target.attributes.src.nodeValue.slice(53,)
             projects.map((e, item) => {
                 if (item.id == target) {
-                    // displays an element with the same image id 
+                    // displays an element with the same image id
                     item.style.display = "block"
+                    project_image.classList.add('active')
                 }
                 if (item.id != target) {
                     // Else hide all other elements
